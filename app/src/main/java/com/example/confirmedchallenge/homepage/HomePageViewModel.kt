@@ -13,9 +13,14 @@ import retrofit2.Response
 
 class HomePageViewModel : ViewModel() {
 
-    private val _response = MutableLiveData<String>()
-    val response: LiveData<String>
-        get() = _response
+    // check status of downloading the objects to the UI
+    private val _status = MutableLiveData<String>()
+    val status: LiveData<String>
+        get() = _status
+
+    private val _product = MutableLiveData<Product>()
+    val product: LiveData<Product>
+        get() = _product
 
     init {
         getProductsList()
@@ -24,10 +29,12 @@ class HomePageViewModel : ViewModel() {
     private fun getProductsList() {
        viewModelScope.launch {
            try {
-               var listResult = ProductsApi.retrofitService.getProducts()
-               _response.value = "Success: ${listResult.size} Products item retrieved"
+               val listResult = ProductsApi.retrofitService.getProducts()
+               if (listResult.isNotEmpty()) {
+                   _product.value = listResult[0]
+               }
            } catch (e: Exception) {
-               _response.value = "Failure: ${e.message}"
+               _status.value = "Failure: ${e.message}"
            }
        }
     }
