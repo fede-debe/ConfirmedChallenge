@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.example.confirmedchallenge.R
 import com.example.confirmedchallenge.databinding.FragmentHomePageBinding
+import com.example.confirmedchallenge.databinding.GridProductItemBinding
 
 class HomePageFragment : Fragment() {
 
@@ -19,7 +20,7 @@ class HomePageFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = FragmentHomePageBinding.inflate(inflater)
+        val binding = GridProductItemBinding.inflate(inflater)
 
         binding.lifecycleOwner = this
 
