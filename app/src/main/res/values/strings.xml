@@ -6,4 +6,11 @@
     <string name="name">Name</string>
     <string name="description">Description</string>
     <string name="price">Price</string>
+    <string name="add_review">Add Review</string>
+    <string name="search">Search</string>
+    <string name="search_hint">Search</string>
+    <string name="insert_your_review">Insert your review</string>
+    <string name="add">ADD</string>
+    <string name="_1_to_5">1 to 5</string>
+    <string name="add_rating">Add Rating:</string>
 </resources>

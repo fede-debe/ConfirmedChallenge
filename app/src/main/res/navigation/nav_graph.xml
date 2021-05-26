@@ -19,6 +19,9 @@
         android:name="com.example.confirmedchallenge.detail.DetailsFragment"
         android:label="fragment_details"
         tools:layout="@layout/fragment_details" >
+        <argument
+            android:name="selectedProduct"
+            app:argType="com.example.confirmedchallenge.network.Product"/>
         <action
             android:id="@+id/action_detailsFragment_to_reviewFragment"
             app:destination="@id/reviewFragment" />
@@ -27,5 +30,9 @@
         android:id="@+id/reviewFragment"
         android:name="com.example.confirmedchallenge.review.ReviewFragment"
         android:label="fragment_review"
-        tools:layout="@layout/fragment_review" />
+        tools:layout="@layout/fragment_review" >
+        <argument
+            android:name="selectedProduct"
+            app:argType="com.example.confirmedchallenge.network.Product"/>
+    </fragment>
 </navigation>
